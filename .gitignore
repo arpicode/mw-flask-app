@@ -1,3 +1,7 @@
+# folders
 __pycache__/
 .venv/
 node_modules/
+
+# files
+.env

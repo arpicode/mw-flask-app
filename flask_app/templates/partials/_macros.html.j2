@@ -1,0 +1,13 @@
+{% macro render_input_field(field, type, class_="") %}
+<div class="row mb-3">
+    <label for="{{ field.id }}" class="col-sm-4 col-form-label col-form-label-sm">{{ field.label.text }}</label>
+    <div class="col-sm">
+        <input type="{{ type }}" name="{{ field.id }}" class="form-control {{class_}}" id="{{ field.id }}">
+    {% if field.errors %}
+        {% for err in field.errors %}
+        <div class="text-danger small">{{ err }}</div>
+        {% endfor %}
+    {% endif %}
+    </div>
+</div>
+{% endmacro %}

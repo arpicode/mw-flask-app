@@ -18,6 +18,7 @@
     {% include 'partials/_navbar.html' %}
 
     <main class="container mt-5 pt-4">
+        {% include "partials/_alerts.html.j2" %}
         {% block content %}{% endblock %}
     </main>
 

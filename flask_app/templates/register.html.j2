@@ -1,0 +1,21 @@
+{% extends "layout.html.j2" %}
+{% set active_page = "register" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Register User</h1>
+{% from 'partials/_macros.html.j2' import render_input_field %}
+<form class="p-4 bg-light rounded-2 border m-auto" action="" method="POST">
+    {{ render_input_field(form.name, type='text', class_="form-control-sm") }}
+    {{ render_input_field(form.email, type='email', class_="form-control-sm") }}
+    {{ render_input_field(form.username, type='text', class_="form-control-sm") }}
+    {{ render_input_field(form.password, type='password', class_="form-control-sm") }}
+    {{ render_input_field(form.confirm, type='password', class_="form-control-sm") }}
+
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-end">
+        <button class="btn btn-primary btn-sm text-align-end" type="submit">Register</button>
+        <button class="btn btn-secondary btn-sm text-align-end" type="button">Cancel</button>
+    </div>
+</form>
+{% endblock %}
