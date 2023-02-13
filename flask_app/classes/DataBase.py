@@ -19,15 +19,27 @@ class DataBase():
     def connect(self):
         self.connection = mariadb.connect(**self.config)
         if (self.connection is not None):
-            self.cursor = self.connection.cursor()
+            self.cursor = self.connection.cursor(dictionary=True)
         else:
             print("Error: Couldn't connect to database.")
 
-    def query(self, sql: str, params: tuple):
+    def query(self, sql: str, params: str | tuple | list):
         result = None
 
         if (self.connection is not None and self.cursor is not None):
             result = self.cursor.execute(sql, params)
+            self.connection.commit()
+        else:
+            print("Error: Not connected to database.")
+
+        return result
+
+    def selectQuery(self,  sql: str, params: str | tuple | list):
+        result = None
+
+        if (self.connection is not None and self.cursor is not None):
+            result = self.cursor.execute(sql, params)
+            result = self.cursor.fetchall()
             self.connection.commit()
         else:
             print("Error: Not connected to database.")

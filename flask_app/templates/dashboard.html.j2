@@ -1,0 +1,8 @@
+{% extends "layout.html.j2" %}
+{% set active_page = "dashboard" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard <span class="fw-normal fs-4 text-secondary">Welcome {{session.username}}</span></h1>
+{% endblock %}

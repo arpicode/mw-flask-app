@@ -1,0 +1,28 @@
+{% extends "layout.html.j2" %}
+{% set active_page = "login" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h1>Login</h1>
+
+<form class="p-4 bg-light rounded-2 border m-auto" action="" method="POST">
+    <div class="row mb-3">
+        <label for="username" class="col-sm-4 col-form-label col-form-label-sm">Username</label>
+        <div class="col-sm">
+            <input type="text" name="username" class="form-control form-control-sm" id="usename">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="password" class="col-sm-4 col-form-label col-form-label-sm">Password</label>
+        <div class="col-sm">
+            <input type="password" name="password" class="form-control form-control-sm" id="password">
+        </div>
+    </div>
+
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-end">
+        <button class="btn btn-primary btn-sm text-align-end" type="submit">Register</button>
+        {# <button class="btn btn-secondary btn-sm text-align-end" type="button">Cancel</button> #}
+    </div>
+</form>
+{% endblock %}
