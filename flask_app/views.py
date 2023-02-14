@@ -4,7 +4,7 @@ from functools import wraps
 from passlib.hash import sha256_crypt
 
 from . import app
-from .data import Articles
+from .data import Guides
 from .classes.RegisterForm import RegisterForm
 from .classes.DataBase import DataBase
 from flask_app.classes.models.User import User
@@ -31,14 +31,14 @@ def about() -> str:
     return render_template('about.html.j2')
 
 
-@app.route('/articles')
+@app.route('/guides')
 def articles() -> str:
-    return render_template('articles.html.j2', articles=Articles())
+    return render_template('guides.html.j2', guides=Guides())
 
 
-@app.route('/articles/<string:id>')
+@app.route('/guides/<string:id>')
 def article(id) -> str:
-    return render_template('article.html.j2', id=id)
+    return render_template('guide.html.j2', id=id)
 
 
 @app.route('/dashboard')

@@ -1,0 +1,13 @@
+{% extends "layout.html.j2" %}
+{% set active_page = "guides" %}
+
+{% block title %}Guides{% endblock %}
+
+{% block content %}
+<h1>Guides Page</h1>
+<ul class="list-group">
+    {% for guide in guides %}
+    <li class="list-group-item"><a href="guides/{{guide.id}}">{{guide.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

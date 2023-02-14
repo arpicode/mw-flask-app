@@ -14,7 +14,7 @@ class User():
 
         db = DataBase()
         db.connect()
-        sql = "INSERT INTO users (name, email, username, password) VALUES(?, ?, ?, ?);"
+        sql = "INSERT INTO users (name, email, username, password) VALUES (?, ?, ?, ?);"
         params = (name, email, username, password)
         db.query(sql=sql, params=params)
         db.close()
